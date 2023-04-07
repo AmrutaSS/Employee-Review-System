@@ -54,8 +54,8 @@ app.use(
     },
     store: MongoStore.create(
       {
-        mongoUrl: "mongodb://localhost:27017/habit",
-        autoRemove: "disabled",
+        mongoUrl: process.env.MONGO_URL,
+        autoRemove: "native",
       },
       function (err) {
         console.log(err || "connect-mongodb setup");
